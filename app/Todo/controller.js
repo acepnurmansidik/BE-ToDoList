@@ -15,9 +15,19 @@ module.exports = {
   },
   actionUpdateTodo: async (req, res) => {
     const { id } = req.params;
-    const { title, status } = req.body;
+    const { title } = req.body;
 
-    let todo = await Todo.findOneAndUpdate({ _id: id }, { title, status });
+    let todo = await Todo.findOneAndUpdate({ _id: id }, { title });
+
+    todo = await Todo.findOne({ _id: todo._id });
+
+    res.status(201).json({ data: todo });
+  },
+  actionToggleStatus: async (req, res) => {
+    const { id } = req.params;
+    const { st } = req.query;
+
+    let todo = await Todo.findOneAndUpdate({ _id: id }, { status: st });
 
     todo = await Todo.findOne({ _id: todo._id });
 
