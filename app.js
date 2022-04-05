@@ -22,8 +22,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(`${URL}/todo`, todoRouter);
 app.use(`${URL}/product`, productRouter);
+app.use(`${URL}/todo`, todoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
