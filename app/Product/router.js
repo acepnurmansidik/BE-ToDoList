@@ -1,9 +1,9 @@
 const express = require("express");
-const { actionReadProduct } = require("./controller");
+const { actionReadProduct, actionCrateProduct } = require("./controller");
 const router = express.Router();
 
 router.get("/product", actionReadProduct);
-// router.post("/", actionCreateTodo);
+router.post("/create-product", actionCrateProduct);
 // router.patch("/:id", actionUpdateTodo);
 // router.delete("/:id", actionTodoDelete);
 // router.patch("/change/:id", actionToggleStatus);
