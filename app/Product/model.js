@@ -11,7 +11,7 @@ let todoSchema = mongoose.Schema({
     type: Number,
   },
   description: {
-    type: Text,
+    type: String,
   },
   thumbnail: {
     type: String,
