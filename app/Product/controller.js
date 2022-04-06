@@ -3,7 +3,7 @@ const Product = require("./model");
 module.exports = {
   actionReadProduct: async (req, res) => {
     try {
-      let products = await products.find();
+      let products = await Product.find();
 
       res.status(201).json({ data: products });
     } catch (err) {
